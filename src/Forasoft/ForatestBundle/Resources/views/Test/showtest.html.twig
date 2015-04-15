@@ -1,0 +1,18 @@
+{% extends 'ForasoftForatestBundle::index.html.twig' %}
+{% form_theme form with 'ForasoftForatestBundle::labels.html.twig' %}
+{% block title %}{{ test_name }}{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="content">
+            <h1>Тест: {{ test_name }}</h1>
+            <small><a href="{{ path('ForasoftForatestBundle_testlist') }}">на главную</a></small>
+            <form action="" method="post" name="form">
+                {{ form_errors(form) }}
+                {{ form_widget(form) }}
+            </form>
+            {% block field_row %}
+            {% endblock field_row %}
+            {% block footer %}{{ parent() }}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+Forasoft\ForatestBundle\Entity\Result:
+    type: entity
+    table: results
+    repositoryClass: Forasoft\ForatestBundle\Entity\ResultRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idTest:
+            type: integer
+            column: id_test
+        user:
+             type: string
+             length: '255'
+             column: user
+        answers:
+            type: string
+            length: '1024'
+    lifecycleCallbacks: {  }

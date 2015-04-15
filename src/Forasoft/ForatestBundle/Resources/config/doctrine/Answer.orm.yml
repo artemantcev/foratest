@@ -1,0 +1,30 @@
+Forasoft\ForatestBundle\Entity\Answer:
+    type: entity
+    table: answers
+    repositoryClass: Forasoft\ForatestBundle\Entity\AnswerRepository
+#linking answers to question master entity
+    manyToOne:
+        question:
+            targetEntity: Question
+            inversedBy: answers
+            joinColumn:
+                name: id_questions
+                referencedColumnName: id
+#end of linking
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idQuestions:
+            type: integer
+            column: id_questions
+        description:
+            type: string
+            length: '100'
+        isTrue:
+            type: boolean
+            column: is_true
+    lifecycleCallbacks: {  }

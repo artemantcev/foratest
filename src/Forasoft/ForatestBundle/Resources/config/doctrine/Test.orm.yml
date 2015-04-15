@@ -1,0 +1,19 @@
+Forasoft\ForatestBundle\Entity\Test:
+    type: entity
+    table: tests
+    repositoryClass: Forasoft\ForatestBundle\Entity\TestRepository
+    oneToMany:
+        questions:
+            targetEntity: Question
+            mappedBy: test
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '100'
+    lifecycleCallbacks: {  }

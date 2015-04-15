@@ -1,0 +1,3 @@
+forasoft_foratest:
+    resource: "@ForasoftForatestBundle/Resources/config/routing.yml"
+    prefix:   /

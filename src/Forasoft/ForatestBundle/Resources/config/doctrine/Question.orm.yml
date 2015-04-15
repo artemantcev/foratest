@@ -1,0 +1,34 @@
+Forasoft\ForatestBundle\Entity\Question:
+    type: entity
+    table: questions
+    repositoryClass: Forasoft\ForatestBundle\Entity\QuestionRepository
+    manyToOne:
+        test:
+            targetEntity: Test
+            inversedBy: questions
+            joinColumn:
+                name: id_tests
+                referencedColumnName: id
+#linking answers
+    oneToMany:
+        answers:
+            targetEntity: Answer
+            mappedBy: question
+#end of linking
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idTests:
+            type: integer
+            column: id_tests
+        description:
+            type: string
+            length: '100'
+        type:
+            type: string
+            length: '10'
+    lifecycleCallbacks: {  }

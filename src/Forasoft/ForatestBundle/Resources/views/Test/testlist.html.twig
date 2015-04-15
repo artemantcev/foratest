@@ -1,0 +1,21 @@
+{% extends 'ForasoftForatestBundle::index.html.twig' %}
+{% block title %}Menu{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="content">
+            <h2>Выберите тест</h2>
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-notice">
+                    <h3>{{ flashMessage }}</h3>
+                </div>
+            {% endfor %}
+            {% for key in tests|keys %}
+            <div class="preview-block" onclick="location.href='{{ path('ForasoftForatestBundle_gettest', {'testid': key+1}) }}';">
+                <div class="title">{{ tests[key] }}</div></div>
+            {% else %}
+                <p>There are no tests to show. :c</p>
+            {% endfor %}
+            {% block footer %}{{ parent() }}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

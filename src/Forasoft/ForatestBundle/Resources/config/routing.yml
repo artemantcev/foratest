@@ -1,0 +1,13 @@
+# src/Blogger/BlogBundle/Resources/config/routing.yml
+
+ForasoftForatestBundle_testlist:
+    pattern:  /
+    defaults: { _controller: ForasoftForatestBundle:Test:index }
+
+
+ForasoftForatestBundle_gettest:
+    pattern:  /test/{testid}
+    defaults: { _controller: ForasoftForatestBundle:Test:show }
+    requirements:
+        _method: GET|POST
+        testid:  \d+
